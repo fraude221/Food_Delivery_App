@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".BasketActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,79 +44,64 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scrollbars="none">
+                android:layout_weight="1">
 
                 <LinearLayout
-                    android:id="@+id/foodLinLay"
+                    android:id="@+id/basketInfoLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical" />
+            </ScrollView>
 
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="#FFFFFF"
-                        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
-                        android:paddingStart="40dp"
-                        android:text="Foods" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:background="@color/topBarColor"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/dropDown"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#FFFFFF"
-                        android:orientation="vertical">
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
+                        <TextView
+                            android:id="@+id/textView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <HorizontalScrollView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:scrollbars="none">
-
-                                <LinearLayout
-                                    android:id="@+id/typeLayout"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal" />
-                            </HorizontalScrollView>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <HorizontalScrollView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <LinearLayout
-                                    android:id="@+id/foodLayout"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal" />
-                            </HorizontalScrollView>
-
-                        </LinearLayout>
+                            android:gravity="center"
+                            android:paddingStart="24dp"
+                            android:text="Toplam: 30 TL"
+                            android:textAlignment="viewStart"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/restaurantLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical" />
+                        android:layout_weight="2"
+                        android:orientation="horizontal">
 
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"
+                            android:text="Gönder"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-            </ScrollView>
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -146,32 +131,34 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/mainRestaurantBtn"
+                        android:id="@+id/basketRestaurantBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="#FFFFFF"
-                        android:drawableTop="@drawable/ic_baseline_fastfood_24_pressed"
+                        android:drawableTop="@drawable/ic_baseline_fastfood_24"
                         android:padding="10dp"
                         android:text="Restaurants"
+                        android:textColor="#000000"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/basketBasketBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#FFFFFF"
+                        android:drawableTop="@drawable/ic_baseline_shopping_basket_24_pressed"
+                        android:padding="10dp"
+                        android:text="Basket"
+                        android:textAllCaps="true"
                         android:textColor="#4CAF50"
                         android:textSize="10sp"
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/mainBasketBtn"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:drawableTop="@drawable/ic_baseline_shopping_basket_24"
-                        android:padding="10dp"
-                        android:text="Basket"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/mainSearchBtn"
+                        android:id="@+id/basketSearchBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
