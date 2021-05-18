@@ -75,6 +75,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // ---------------------------------------------
+        //                   EXAMPLE
+        // ----------------------------------------------
+
+        // Call this first.
+        Database.LoadData();
+
+        // Filter restaurants by category
+        LinkedListNode<RestaurantInfo> node = Database.FilterRestaurantsByCategory(Database.RESTAURANTS_ROOT, Database.CAT_BURGERS.getName());
     }
 
     private void AddFoodList(){
