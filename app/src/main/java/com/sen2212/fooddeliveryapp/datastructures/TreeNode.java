@@ -1,11 +1,13 @@
 package com.sen2212.fooddeliveryapp.datastructures;
 
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 
 public class TreeNode<Data> {
     private Data data;
     private TreeNode<Data> parent;
-    private ArrayList<TreeNode<Data>> children;
+    private ArrayList<TreeNode<Data>> children = new ArrayList<>();
 
     public static <Data> TreeNode<Data> CreateTree(Data data){
         if(data == null) throw new NullPointerException("data is null!");

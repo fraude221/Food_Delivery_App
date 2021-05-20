@@ -5,16 +5,17 @@ public class FoodInfo {
     private String name;
     private TreeNode<FoodCategory> foodCategory;
     private double price;
-    private int image;
+    private String type;
 
-    public FoodInfo(String name, TreeNode<FoodCategory> foodCategory, double price, int image){
+    public FoodInfo(String name, TreeNode<FoodCategory> foodCategory, double price, String type){
         if(name == null) throw new NullPointerException("name is null!");
         if(foodCategory == null) throw new NullPointerException("foodCategory is null!");
         this.name = name;
         this.foodCategory = foodCategory;
         this.price = price;
-        this.image = image;
+        this.type = type;
     }
+
 
     public String getName(){
         return name;
@@ -28,7 +29,7 @@ public class FoodInfo {
         return "₺" + String.format("%.2f", price);
     }
 
-    public int getImage() {return image;}
+    public String getType(){return type;}
 
     public boolean hasCategory(String categoryName){
         if(categoryName == null) throw new NullPointerException("categoryName is null!");

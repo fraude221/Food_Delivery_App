@@ -31,14 +31,20 @@ public class LinkedListNode<Data> {
         return next;
     }
 
+    public void setNext(LinkedListNode<Data> next) {this.next = next;}
+
     public LinkedListNode<Data> getParent(){
         return parent;
     }
+
+    public void setParent(LinkedListNode<Data> parent) {this.parent = parent;}
 
     public LinkedListNode<Data> getRoot(){
         if(isRoot()) return this;
         else return getParent().getRoot();
     }
+
+    public void removeNext() {this.next = null;}
 
     public boolean isTail(){
         return next == null;
