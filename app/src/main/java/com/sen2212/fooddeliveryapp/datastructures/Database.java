@@ -10,6 +10,7 @@ public class Database {
     //*******************************************************************************************************************************************************************************
     public static FoodCategory CAT_ROOT = new FoodCategory("Categories", R.drawable.ic_launcher_background, Color.WHITE); // Categories
 
+    public static FoodCategory CAT_ALL = new FoodCategory("All", R.drawable.unnamed,Color.BLACK); // Categories > ALL
     //LAHMACUN
     public static FoodCategory CAT_LAHMACUN = new FoodCategory("Lahmacun", R.drawable.ic_launcher_background,Color.parseColor("#FF9BF39F")); // Categories > Lahmacun
     public static FoodCategory CAT_ACILI_LAHMACUN = new FoodCategory("Acılı Lahmacun", R.drawable.acili_lahmacun,Color.parseColor("#FF9BF39F")); // Categories > Lahmacun > Acılı Lahmacun
@@ -161,6 +162,129 @@ public class Database {
     public static FoodInfo BISES_PIDE_KUSP = new FoodInfo("Kuşbaşı Pide", NCAT_KUSBASI_PIDE, 20,"food");
     public static FoodInfo BISES_PIDE_SP = new FoodInfo("Sucuklu Pide", NCAT_SUCUKLU_PIDE, 18,"food");
 
+    public static FoodInfo KOCA_PIDE_KIYKP = new FoodInfo("Kıymalı Kaşarlı Pide", NCAT_KIYMALI_KASARLI_PIDE, 12,"food");
+    public static FoodInfo KOCA_PIDE_KIYP = new FoodInfo("Kıymalı Pide", NCAT_KIYMALI_PIDE, 10,"food");
+    public static FoodInfo KOCA_PIDE_KUSKP = new FoodInfo("Kuşbaşı Kaşarlı Pide", NCAT_KUSBASILI_KASARLI_PIDE, 12,"food");
+    public static FoodInfo KOCA_PIDE_KUSP = new FoodInfo("Kuşbaşı Pide", NCAT_KUSBASI_PIDE, 10,"food");
+
+    public static FoodInfo BLACK_BURGER_CB = new FoodInfo("Cheese Burger", NCAT_CHEESE_BURGER, 10,"food");
+    public static FoodInfo BLACK_BURGER_FEB = new FoodInfo("Füme Et Burger", NCAT_FUME_ET_BURGER, 20,"food");
+    public static FoodInfo BLACK_BURGER_SB = new FoodInfo("Steakhouse Burger", NCAT_STEAKHOUSE_BURGER, 25,"food");
+
+    public static FoodInfo BULL_BURGER_CB = new FoodInfo("Cheese Burger", NCAT_CHEESE_BURGER, 12,"food");
+    public static FoodInfo BULL_BURGER_FEB = new FoodInfo("Füme Et Burger", NCAT_FUME_ET_BURGER, 30,"food");
+    public static FoodInfo BULL_BURGER_SB = new FoodInfo("Steakhouse Burger", NCAT_STEAKHOUSE_BURGER, 35,"food");
+    public static FoodInfo BULL_BURGER_MB = new FoodInfo("Mantarlı Burger", NCAT_MANTAR_BURGER, 25,"food");
+
+    public static FoodInfo GURME_BURGER_CB = new FoodInfo("Cheese Burger", NCAT_CHEESE_BURGER, 10,"food");
+    public static FoodInfo GURME_BURGER_FEB = new FoodInfo("Füme Et Burger", NCAT_FUME_ET_BURGER, 25,"food");
+    public static FoodInfo GURME_BURGER_SB = new FoodInfo("Steakhouse Burger", NCAT_STEAKHOUSE_BURGER, 25,"food");
+    public static FoodInfo GURME_BURGER_MB = new FoodInfo("Mantarlı Burger", NCAT_MANTAR_BURGER, 20,"food");
+    public static FoodInfo GURME_BURGER_BB = new FoodInfo("Balık Burger", NCAT_BALIK_BURGER, 18,"food");
+
+    public static FoodInfo YESIM_BURGER_CB = new FoodInfo("Cheese Burger", NCAT_CHEESE_BURGER, 15,"food");
+    public static FoodInfo YESIM_BURGER_FEB = new FoodInfo("Füme Et Burger", NCAT_FUME_ET_BURGER, 40,"food");
+    public static FoodInfo YESIM_BURGER_SB = new FoodInfo("Steakhouse Burger", NCAT_STEAKHOUSE_BURGER, 40,"food");
+    public static FoodInfo YESIM_BURGER_MB = new FoodInfo("Mantarlı Burger", NCAT_MANTAR_BURGER, 15,"food");
+    public static FoodInfo YESIM_BURGER_VB = new FoodInfo("Vegan Burger", NCAT_VEGAN_BURGER, 15,"food");
+
+    public static FoodInfo GUZEL_BURGER_CB = new FoodInfo("Cheese Burger", NCAT_CHEESE_BURGER, 8,"food");
+    public static FoodInfo GUZEL_BURGER_FEB = new FoodInfo("Füme Et Burger", NCAT_FUME_ET_BURGER, 30,"food");
+    public static FoodInfo GUZEL_BURGER_SB = new FoodInfo("Steakhouse Burger", NCAT_STEAKHOUSE_BURGER, 30,"food");
+    public static FoodInfo GUZEL_BURGER_MB = new FoodInfo("Mantarlı Burger", NCAT_MANTAR_BURGER, 10,"food");
+    public static FoodInfo GUZEL_BURGER_VB = new FoodInfo("Vegan Burger", NCAT_VEGAN_BURGER, 12,"food");
+    public static FoodInfo GUZEL_BURGER_BB = new FoodInfo("Balık Burger", NCAT_BALIK_BURGER, 15,"food");
+
+    public static FoodInfo HATAY_DONER_EDD = new FoodInfo("Et Dürüm Döner", NCAT_ET_DURUM, 20,"food");
+    public static FoodInfo HATAY_DONER_PED = new FoodInfo("Pide Et Döner", NCAT_PIDE_ET_DONER, 20,"food");
+    public static FoodInfo HATAY_DONER_YEED = new FoodInfo("Yarım Ekmek Et Döner", NCAT_YARIM_EKMEK_ET, 20,"food");
+    public static FoodInfo HATAY_DONER_TDD = new FoodInfo("Tavuk Dürüm Döner", NCAT_TAVUK_DURUM, 12,"food");
+    public static FoodInfo HATAY_DONER_PTD = new FoodInfo("Pide Tavuk Döner", NCAT_PIDE_TAVUK_DONER, 12,"food");
+    public static FoodInfo HATAY_DONER_YETD = new FoodInfo("Yarım Ekmek Tavuk Döner", NCAT_YARIM_EKMEK_TAVUK, 12,"food");
+
+    public static FoodInfo CANIM_DONER_EDD = new FoodInfo("Et Dürüm Döner", NCAT_ET_DURUM, 15,"food");
+    public static FoodInfo CANIM_DONER_PED = new FoodInfo("Pide Et Döner", NCAT_PIDE_ET_DONER, 12,"food");
+    public static FoodInfo CANIM_DONER_YEED = new FoodInfo("Yarım Ekmek Et Döner", NCAT_YARIM_EKMEK_ET, 18,"food");
+    public static FoodInfo CANIM_DONER_TDD = new FoodInfo("Tavuk Dürüm Döner", NCAT_TAVUK_DURUM, 10,"food");
+    public static FoodInfo CANIM_DONER_PTD = new FoodInfo("Pide Tavuk Döner", NCAT_PIDE_TAVUK_DONER, 8,"food");
+    public static FoodInfo CANIM_DONER_YETD = new FoodInfo("Yarım Ekmek Tavuk Döner", NCAT_YARIM_EKMEK_TAVUK, 12,"food");
+
+    public static FoodInfo HARBI_DONER_EDD = new FoodInfo("Et Dürüm Döner", NCAT_ET_DURUM, 22,"food");
+    public static FoodInfo HARBI_DONER_PED = new FoodInfo("Pide Et Döner", NCAT_PIDE_ET_DONER, 22,"food");
+    public static FoodInfo HARBI_DONER_YEED = new FoodInfo("Yarım Ekmek Et Döner", NCAT_YARIM_EKMEK_ET, 22,"food");
+    public static FoodInfo HARBI_DONER_TDD = new FoodInfo("Tavuk Dürüm Döner", NCAT_TAVUK_DURUM, 12,"food");
+    public static FoodInfo HARBI_DONER_PTD = new FoodInfo("Pide Tavuk Döner", NCAT_PIDE_TAVUK_DONER, 12,"food");
+    public static FoodInfo HARBI_DONER_YETD = new FoodInfo("Yarım Ekmek Tavuk Döner", NCAT_YARIM_EKMEK_TAVUK, 12,"food");
+
+    public static FoodInfo LEZIZ_DONER_EDD = new FoodInfo("Et Dürüm Döner", NCAT_ET_DURUM, 10,"food");
+    public static FoodInfo LEZIZ_DONER_PED = new FoodInfo("Pide Et Döner", NCAT_PIDE_ET_DONER, 10,"food");
+    public static FoodInfo LEZIZ_DONER_YEED = new FoodInfo("Yarım Ekmek Et Döner", NCAT_YARIM_EKMEK_ET, 10,"food");
+    public static FoodInfo LEZIZ_DONER_TDD = new FoodInfo("Tavuk Dürüm Döner", NCAT_TAVUK_DURUM, 5,"food");
+    public static FoodInfo LEZIZ_DONER_PTD = new FoodInfo("Pide Tavuk Döner", NCAT_PIDE_TAVUK_DONER, 5,"food");
+    public static FoodInfo LEZIZ_DONER_YETD = new FoodInfo("Yarım Ekmek Tavuk Döner", NCAT_YARIM_EKMEK_TAVUK, 5,"food");
+
+    public static FoodInfo YANAR_DONER_EDD = new FoodInfo("Et Dürüm Döner", NCAT_ET_DURUM, 10,"food");
+    public static FoodInfo YANAR_DONER_PED = new FoodInfo("Pide Et Döner", NCAT_PIDE_ET_DONER, 12,"food");
+    public static FoodInfo YANAR_DONER_YEED = new FoodInfo("Yarım Ekmek Et Döner", NCAT_YARIM_EKMEK_ET, 14,"food");
+    public static FoodInfo YANAR_DONER_TDD = new FoodInfo("Tavuk Dürüm Döner", NCAT_TAVUK_DURUM, 5,"food");
+    public static FoodInfo YANAR_DONER_PTD = new FoodInfo("Pide Tavuk Döner", NCAT_PIDE_TAVUK_DONER, 7,"food");
+    public static FoodInfo YANAR_DONER_YETD = new FoodInfo("Yarım Ekmek Tavuk Döner", NCAT_YARIM_EKMEK_TAVUK, 9,"food");
+
+    public static FoodInfo LEZZET_CIGKOFTE_CD = new FoodInfo("Çiğköfte Dürüm", NCAT_CIG_KOFTE_DURUM, 5,"food");
+    public static FoodInfo LEZZET_CIGKOFTE_C250 = new FoodInfo("Çiğköfte 250gr", NCAT_CIG_KOFTE_250GR, 10,"food");
+    public static FoodInfo LEZZET_CIGKOFTE_C500 = new FoodInfo("Çiğköfte 500gr", NCAT_CIG_KOFTE_500GR, 20,"food");
+    public static FoodInfo LEZZET_CIGKOFTE_C1 = new FoodInfo("Çiğköfte 1kg", NCAT_CIG_KOFTE_1KG, 40,"food");
+
+    public static FoodInfo ADIYAMAN_CIGKOFTE_CD = new FoodInfo("Çiğköfte Dürüm", NCAT_CIG_KOFTE_DURUM, 5,"food");
+    public static FoodInfo ADIYAMAN_CIGKOFTE_C250 = new FoodInfo("Çiğköfte 250gr", NCAT_CIG_KOFTE_250GR, 10,"food");
+    public static FoodInfo ADIYAMAN_CIGKOFTE_C500 = new FoodInfo("Çiğköfte 500gr", NCAT_CIG_KOFTE_500GR, 18,"food");
+    public static FoodInfo ADIYAMAN_CIGKOFTE_C1 = new FoodInfo("Çiğköfte 1kg", NCAT_CIG_KOFTE_1KG, 30,"food");
+
+    public static FoodInfo SESO_CIGKOFTE_CD = new FoodInfo("Çiğköfte Dürüm", NCAT_CIG_KOFTE_DURUM, 8,"food");
+    public static FoodInfo SESO_CIGKOFTE_C250 = new FoodInfo("Çiğköfte 250gr", NCAT_CIG_KOFTE_250GR, 15,"food");
+    public static FoodInfo SESO_CIGKOFTE_C500 = new FoodInfo("Çiğköfte 500gr", NCAT_CIG_KOFTE_500GR, 20,"food");
+    public static FoodInfo SESO_CIGKOFTE_C1 = new FoodInfo("Çiğköfte 1kg", NCAT_CIG_KOFTE_1KG, 25,"food");
+
+    public static FoodInfo COKCOK_CIGKOFTE_CD = new FoodInfo("Çiğköfte Dürüm", NCAT_CIG_KOFTE_DURUM, 12,"food");
+    public static FoodInfo COKCOK_CIGKOFTE_C250 = new FoodInfo("Çiğköfte 250gr", NCAT_CIG_KOFTE_250GR, 30,"food");
+    public static FoodInfo COKCOK_CIGKOFTE_C500 = new FoodInfo("Çiğköfte 500gr", NCAT_CIG_KOFTE_500GR, 50,"food");
+    public static FoodInfo COKCOK_CIGKOFTE_C1 = new FoodInfo("Çiğköfte 1kg", NCAT_CIG_KOFTE_1KG, 70,"food");
+
+    public static FoodInfo ADKO_CIGKOFTE_CD = new FoodInfo("Çiğköfte Dürüm", NCAT_CIG_KOFTE_DURUM, 5,"food");
+    public static FoodInfo ADKO_CIGKOFTE_C250 = new FoodInfo("Çiğköfte 250gr", NCAT_CIG_KOFTE_250GR, 30,"food");
+    public static FoodInfo ADKO_CIGKOFTE_C500 = new FoodInfo("Çiğköfte 500gr", NCAT_CIG_KOFTE_500GR, 50,"food");
+    public static FoodInfo ADKO_CIGKOFTE_C1 = new FoodInfo("Çiğköfte 1kg", NCAT_CIG_KOFTE_1KG, 70,"food");
+
+    public static FoodInfo GURMEM_PIZZA_BBQTP = new FoodInfo("BBQ Tavuk Pizza", NCAT_BBQ_TAVUK_PIZZA, 25,"food");
+    public static FoodInfo GURMEM_PIZZA_AP= new FoodInfo("Ananaslı Pizza", NCAT_ANANASLI_PIZZA, 25,"food");
+    public static FoodInfo GURMEM_PIZZA_KP = new FoodInfo("Karışık Pizza", NCAT_KARISIK_PIZZA, 30,"food");
+    public static FoodInfo GURMEM_PIZZA_MANP = new FoodInfo("Mantarlı Pizza", NCAT_MANTARLI_PIZZA, 25,"food");
+    public static FoodInfo GURMEM_PIZZA_MARP = new FoodInfo("Margarita Pizza", NCAT_MARGARITA_PIZZA, 25,"food");
+    public static FoodInfo GURMEM_PIZZA_SP = new FoodInfo("Sucuklu Pizza", NCAT_SUCUKLU_PIZZA, 25,"food");
+
+    public static FoodInfo ARTISAN_PIZZA_BBQTP = new FoodInfo("BBQ Tavuk Pizza", NCAT_BBQ_TAVUK_PIZZA, 30,"food");
+    public static FoodInfo ARTISAN_PIZZA_AP= new FoodInfo("Ananaslı Pizza", NCAT_ANANASLI_PIZZA, 30,"food");
+    public static FoodInfo ARTISAN_PIZZA_KP = new FoodInfo("Karışık Pizza", NCAT_KARISIK_PIZZA, 35,"food");
+    public static FoodInfo ARTISAN_PIZZA_MANP = new FoodInfo("Mantarlı Pizza", NCAT_MANTARLI_PIZZA, 30,"food");
+    public static FoodInfo ARTISAN_PIZZA_MARP = new FoodInfo("Margarita Pizza", NCAT_MARGARITA_PIZZA, 30,"food");
+    public static FoodInfo ARTISAN_PIZZA_SP = new FoodInfo("Sucuklu Pizza", NCAT_SUCUKLU_PIZZA, 35,"food");
+
+    public static FoodInfo ITALIANO_PIZZA_BBQTP = new FoodInfo("BBQ Tavuk Pizza", NCAT_BBQ_TAVUK_PIZZA, 50,"food");
+    public static FoodInfo ITALIANO_PIZZA_KP = new FoodInfo("Karışık Pizza", NCAT_KARISIK_PIZZA, 50,"food");
+    public static FoodInfo ITALIANO_PIZZA_MARP = new FoodInfo("Margarita Pizza", NCAT_MARGARITA_PIZZA, 50,"food");
+    public static FoodInfo ITALIANO_PIZZA_SP = new FoodInfo("Sucuklu Pizza", NCAT_SUCUKLU_PIZZA, 50,"food");
+
+    public static FoodInfo IYIDIR_PIZZA_BBQTP = new FoodInfo("BBQ Tavuk Pizza", NCAT_BBQ_TAVUK_PIZZA, 25,"food");
+    public static FoodInfo IYIDIR_PIZZA_KP = new FoodInfo("Karışık Pizza", NCAT_KARISIK_PIZZA, 25,"food");
+    public static FoodInfo IYIDIR_PIZZA_MARP = new FoodInfo("Margarita Pizza", NCAT_MARGARITA_PIZZA, 25,"food");
+    public static FoodInfo IYIDIR_PIZZA_SP = new FoodInfo("Sucuklu Pizza", NCAT_SUCUKLU_PIZZA, 25,"food");
+
+    public static FoodInfo DILIM_PIZZA_BBQTP = new FoodInfo("BBQ Tavuk Pizza", NCAT_BBQ_TAVUK_PIZZA, 15,"food");
+    public static FoodInfo DILIM_PIZZA_KP = new FoodInfo("Karışık Pizza", NCAT_KARISIK_PIZZA, 20,"food");
+    public static FoodInfo DILIM_PIZZA_MANP = new FoodInfo("Mantarlı Pizza", NCAT_MANTARLI_PIZZA, 15,"food");
+    public static FoodInfo DILIM_PIZZA_MARP = new FoodInfo("Margarita Pizza", NCAT_MARGARITA_PIZZA, 10,"food");
+    public static FoodInfo DILIM_PIZZA_SP = new FoodInfo("Sucuklu Pizza", NCAT_SUCUKLU_PIZZA, 20,"food");
+
     // Restaurants
     public static LinkedListNode<RestaurantInfo> RESTAURANTS_ROOT;
     // Basket
@@ -173,137 +297,124 @@ public class Database {
     private static void LoadRestaurants(){
 
         // Neco Lahmacun
-        LinkedListNode<FoodInfo> necoLahmacunMenu = LinkedListNode.CreateList(NECO_AL);
-        LinkedListNode<FoodInfo> nextFood = necoLahmacunMenu.addNextNode(NECO_BL);
-        nextFood = nextFood.addNextNode(NECO_CL);
-        nextFood = nextFood.addNextNode(NECO_FL);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        nextFood = nextFood.addNextNode(NECO_SALGAM);
-        RestaurantInfo necoLahmacun = new RestaurantInfo("Neco Lahmacun", necoLahmacunMenu);
+        FoodInfo[] necoLahmacunMenu = {NECO_AL,NECO_BL,NECO_CL,NECO_FL,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo necoLahmacun = new RestaurantInfo("Neco Lahmacun", createMenu(necoLahmacunMenu));
 
         // Çevre Lahmacun
-        LinkedListNode<FoodInfo> cevreLahmacunMenu = LinkedListNode.CreateList(CEVRE_BL);
-        nextFood = cevreLahmacunMenu.addNextNode(CEVRE_CL);
-        nextFood = nextFood.addNextNode(CEVRE_FL);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        nextFood = nextFood.addNextNode(NECO_SALGAM);
-        RestaurantInfo cevreLahmacun = new RestaurantInfo("Çevre Lahmacun", cevreLahmacunMenu);
+        FoodInfo[] cevreLahmacunMenu = {CEVRE_BL,CEVRE_CL,CEVRE_FL,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo cevreLahmacun = new RestaurantInfo("Çevre Lahmacun", createMenu(cevreLahmacunMenu));
 
         // Saray Lahmacun
-        LinkedListNode<FoodInfo> sarayLahmacunMenu = LinkedListNode.CreateList(SARAY_AL);
-        nextFood = sarayLahmacunMenu.addNextNode(SARAY_BL);
-        nextFood = nextFood.addNextNode(SARAY_CL);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        nextFood = nextFood.addNextNode(NECO_SALGAM);
-        RestaurantInfo sarayLahmacun = new RestaurantInfo("Saray Lahmacun", sarayLahmacunMenu);
+        FoodInfo[] sarayLahmacunMenu = {SARAY_AL,SARAY_BL,SARAY_CL,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo sarayLahmacun = new RestaurantInfo("Saray Lahmacun", createMenu(sarayLahmacunMenu));
 
         // Anteplim Lahmacun
-        LinkedListNode<FoodInfo> anteplimLahmacunMenu = LinkedListNode.CreateList(ANTEPLIM_AL);
-        nextFood = anteplimLahmacunMenu.addNextNode(ANTEPLIM_BL);
-        nextFood = nextFood.addNextNode(ANTEPLIM_CL);
-        nextFood = nextFood.addNextNode(ANTEPLIM_FL);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        nextFood = nextFood.addNextNode(NECO_SALGAM);
-        RestaurantInfo anteplimLahmacun = new RestaurantInfo("Anteplim Lahmacun", anteplimLahmacunMenu);
+        FoodInfo[] anteplimLahmacunMenu = {ANTEPLIM_AL,ANTEPLIM_BL,ANTEPLIM_CL,ANTEPLIM_FL,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo anteplimLahmacun = new RestaurantInfo("Anteplim Lahmacun", createMenu(anteplimLahmacunMenu));
 
         // Usta Lahmacun
-        LinkedListNode<FoodInfo> ustaLahmacunMenu = LinkedListNode.CreateList(USTA_BL);
-        nextFood = ustaLahmacunMenu.addNextNode(USTA_CL);
-        nextFood = nextFood.addNextNode(USTA_FL);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        nextFood = nextFood.addNextNode(NECO_SALGAM);
-        RestaurantInfo ustaLahmacun = new RestaurantInfo("Usta Lahmacun", ustaLahmacunMenu);
+        FoodInfo[] ustaLahmacunMenu = {USTA_BL,USTA_CL,USTA_FL,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo ustaLahmacun = new RestaurantInfo("Usta Lahmacun", createMenu(ustaLahmacunMenu));
 
         // Dede Pide
-        LinkedListNode<FoodInfo> dedePideMenu = LinkedListNode.CreateList(DEDE_PIDE_KIYKP);
-        nextFood = dedePideMenu.addNextNode(DEDE_PIDE_KIYP);
-        nextFood = nextFood.addNextNode(DEDE_PIDE_KUSKP);
-        nextFood = nextFood.addNextNode(DEDE_PIDE_KUSP);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        RestaurantInfo dedePide = new RestaurantInfo("Dede Pide", dedePideMenu);
+        FoodInfo[] dedePideMenu = {DEDE_PIDE_KIYKP,DEDE_PIDE_KIYP,DEDE_PIDE_KUSKP,DEDE_PIDE_KUSP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo dedePide = new RestaurantInfo("Dede Pide",  createMenu(dedePideMenu));
 
         // Doydoy Pide
-        LinkedListNode<FoodInfo> doydoyPideMenu = LinkedListNode.CreateList(DOYDOY_PIDE_KIYKP);
-        nextFood = doydoyPideMenu.addNextNode(DOYDOY_PIDE_KIYP);
-        nextFood = nextFood.addNextNode(DOYDOY_PIDE_KUSKP);
-        nextFood = nextFood.addNextNode(DOYDOY_PIDE_KUSP);
-        nextFood = nextFood.addNextNode(DOYDOY_PIDE_SP);
-        nextFood = nextFood.addNextNode(DOYDOY_PIDE_MP);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        RestaurantInfo doydoyPide = new RestaurantInfo("Doydoy Pide", doydoyPideMenu);
+        FoodInfo[] doydoyPideMenu = {DOYDOY_PIDE_KIYKP,DOYDOY_PIDE_KIYP,DOYDOY_PIDE_KUSKP,DOYDOY_PIDE_KUSP,DOYDOY_PIDE_SP,DOYDOY_PIDE_MP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA};
+        RestaurantInfo doydoyPide = new RestaurantInfo("Doydoy Pide", createMenu(doydoyPideMenu));
 
         // Pidemm Pide
-        LinkedListNode<FoodInfo> pidemmPideMenu = LinkedListNode.CreateList(PIDEMM_PIDE_KIYKP);
-        nextFood = pidemmPideMenu.addNextNode(PIDEMM_PIDE_KIYP);
-        nextFood = nextFood.addNextNode(PIDEMM_PIDE_KUSKP);
-        nextFood = nextFood.addNextNode(PIDEMM_PIDE_KUSP);
-        nextFood = nextFood.addNextNode(PIDEMM_PIDE_SP);
-        nextFood = nextFood.addNextNode(PIDEMM_PIDE_MP);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        RestaurantInfo pidemmPide = new RestaurantInfo("Pidemm Pide", pidemmPideMenu);
+        FoodInfo[] pidemmPideMenu = {PIDEMM_PIDE_KIYKP,PIDEMM_PIDE_KIYP,PIDEMM_PIDE_KUSKP,PIDEMM_PIDE_KUSP,PIDEMM_PIDE_SP,PIDEMM_PIDE_MP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA};
+        RestaurantInfo pidemmPide = new RestaurantInfo("Pidemm Pide", createMenu(pidemmPideMenu));
 
         // Bises Pide
-        LinkedListNode<FoodInfo> bisesPideMenu = LinkedListNode.CreateList(BISES_PIDE_KIYKP);
-        nextFood = bisesPideMenu.addNextNode(BISES_PIDE_KIYP);
-        nextFood = nextFood.addNextNode(BISES_PIDE_KUSKP);
-        nextFood = nextFood.addNextNode(BISES_PIDE_KUSP);
-        nextFood = nextFood.addNextNode(BISES_PIDE_SP);
-        nextFood = nextFood.addNextNode(NECO_COLA);
-        nextFood = nextFood.addNextNode(NECO_COLA_L);
-        nextFood = nextFood.addNextNode(NECO_COLA_Z);
-        nextFood = nextFood.addNextNode(NECO_FANTA);
-        nextFood = nextFood.addNextNode(NECO_SPRITE);
-        nextFood = nextFood.addNextNode(NECO_AYRAN);
-        nextFood = nextFood.addNextNode(NECO_SODA);
-        RestaurantInfo bisesPide = new RestaurantInfo("Bises Pide", bisesPideMenu);
+        FoodInfo[] bisesPideMenu = {BISES_PIDE_KIYKP,BISES_PIDE_KIYP,BISES_PIDE_KUSKP,BISES_PIDE_KUSP,BISES_PIDE_SP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA};
+        RestaurantInfo bisesPide = new RestaurantInfo("Bises Pide", createMenu(bisesPideMenu));
+
+        // Koca Pide
+        FoodInfo[] kocaPideMenu = {KOCA_PIDE_KIYKP,KOCA_PIDE_KIYP,KOCA_PIDE_KUSKP,KOCA_PIDE_KUSP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA};
+        RestaurantInfo kocaPide = new RestaurantInfo("Koca Pide", createMenu(kocaPideMenu));
+
+        // Black Burger
+        FoodInfo[] blackBurgerMenu = {BLACK_BURGER_CB,BLACK_BURGER_FEB,BLACK_BURGER_SB,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE};
+        RestaurantInfo blackBurger = new RestaurantInfo("Black Burger", createMenu(blackBurgerMenu));
+
+        // Bull Burger
+        FoodInfo[] bullBurgerMenu = {BULL_BURGER_CB,BULL_BURGER_FEB,BULL_BURGER_MB,BULL_BURGER_SB,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE};
+        RestaurantInfo bullBurger = new RestaurantInfo("Bull Burger", createMenu(bullBurgerMenu));
+
+        // Gurme Burger
+        FoodInfo[] gurmeBurgerMenu = {GURME_BURGER_CB,GURME_BURGER_FEB,GURME_BURGER_MB,GURME_BURGER_SB,GURME_BURGER_BB,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE};
+        RestaurantInfo gurmeBurger = new RestaurantInfo("Gurme Burger", createMenu(gurmeBurgerMenu));
+
+        // Yeşim Burger
+        FoodInfo[] yesimBurgerMenu = {YESIM_BURGER_CB,YESIM_BURGER_FEB,YESIM_BURGER_MB,YESIM_BURGER_SB,YESIM_BURGER_VB,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE};
+        RestaurantInfo yesimBurger = new RestaurantInfo("Yeşim Burger", createMenu(yesimBurgerMenu));
+
+        // Güzel Burger
+        FoodInfo[] guzelBurgerMenu = {GUZEL_BURGER_CB,GUZEL_BURGER_FEB,GUZEL_BURGER_MB,GUZEL_BURGER_SB,GUZEL_BURGER_BB,GUZEL_BURGER_VB,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE};
+        RestaurantInfo guzelBurger = new RestaurantInfo("Güzel Burger", createMenu(guzelBurgerMenu));
+
+        // Hatay Döner
+        FoodInfo[] hatayDonerMenu = {HATAY_DONER_EDD,HATAY_DONER_PED,HATAY_DONER_PTD,HATAY_DONER_TDD,HATAY_DONER_YEED,HATAY_DONER_YETD,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo hatayDoner = new RestaurantInfo("Hatay Döner", createMenu(hatayDonerMenu));
+
+        // Canım Döner
+        FoodInfo[] canımDonerMenu = {CANIM_DONER_EDD,CANIM_DONER_PED,CANIM_DONER_PTD,CANIM_DONER_TDD,CANIM_DONER_YEED,CANIM_DONER_YETD,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo canımDoner = new RestaurantInfo("Canım Döner", createMenu(canımDonerMenu));
+
+        // Harbi Döner
+        FoodInfo[] harbiDonerMenu = {HARBI_DONER_EDD,HARBI_DONER_PED,HARBI_DONER_PTD,HARBI_DONER_TDD,HARBI_DONER_YEED,HARBI_DONER_YETD,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo harbiDoner = new RestaurantInfo("Harbi Döner", createMenu(harbiDonerMenu));
+
+        // Leziz Döner
+        FoodInfo[] lezizDonerMenu = {LEZIZ_DONER_EDD,LEZIZ_DONER_PED,LEZIZ_DONER_PTD,LEZIZ_DONER_TDD,LEZIZ_DONER_YEED,LEZIZ_DONER_YETD,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo lezizDoner = new RestaurantInfo("Leziz Döner", createMenu(lezizDonerMenu));
+
+        // Yanar Döner
+        FoodInfo[] yanarDonerMenu = {YANAR_DONER_EDD,YANAR_DONER_PED,YANAR_DONER_PTD,YANAR_DONER_TDD,YANAR_DONER_YEED,YANAR_DONER_YETD,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo yanarDoner = new RestaurantInfo("Yanar Döner", createMenu(yanarDonerMenu));
+
+        // Lezzet Çiğköfte
+        FoodInfo[] lezzetCigkofteMenu = {LEZZET_CIGKOFTE_CD,LEZZET_CIGKOFTE_C250,LEZZET_CIGKOFTE_C500,LEZZET_CIGKOFTE_C1,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo lezzetCigkofte = new RestaurantInfo("Lezzet Çiğköfte", createMenu(lezzetCigkofteMenu));
+
+        // Adıyaman Çiğköfte
+        FoodInfo[] adiyamanCigkofteMenu = {ADIYAMAN_CIGKOFTE_CD,ADIYAMAN_CIGKOFTE_C250,ADIYAMAN_CIGKOFTE_C500,ADIYAMAN_CIGKOFTE_C1,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo adiyamanCigkofte = new RestaurantInfo("Adıyaman Çiğköfte", createMenu(adiyamanCigkofteMenu));
+
+        // SeSo Çiğköfte
+        FoodInfo[] sesoCigkofteMenu = {SESO_CIGKOFTE_CD,SESO_CIGKOFTE_C250,SESO_CIGKOFTE_C500,SESO_CIGKOFTE_C1,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo sesoCigkofte = new RestaurantInfo("SeSo Çiğköfte", createMenu(sesoCigkofteMenu));
+
+        // ÇokÇok Çiğköfte
+        FoodInfo[] cokcokCigkofteMenu = {COKCOK_CIGKOFTE_CD,COKCOK_CIGKOFTE_C250,COKCOK_CIGKOFTE_C500,COKCOK_CIGKOFTE_C1,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo cokcokCigkofte = new RestaurantInfo("ÇokÇok Çiğköfte", createMenu(cokcokCigkofteMenu));
+
+        // Adko Çiğköfte
+        FoodInfo[] adkoCigkofteMenu = {ADKO_CIGKOFTE_CD,ADKO_CIGKOFTE_C250,ADKO_CIGKOFTE_C500,ADKO_CIGKOFTE_C1,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_AYRAN,NECO_SODA,NECO_SALGAM};
+        RestaurantInfo adkoCigkofte = new RestaurantInfo("Adko Çiğköfte", createMenu(adkoCigkofteMenu));
+
+        // Gurmem Pizza
+        FoodInfo[] gurmemPizzaMenu = {GURMEM_PIZZA_AP,GURMEM_PIZZA_BBQTP,GURMEM_PIZZA_KP,GURMEM_PIZZA_MANP,GURMEM_PIZZA_MARP,GURMEM_PIZZA_SP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo gurmemPizza = new RestaurantInfo("Gurmem Pizza", createMenu(gurmemPizzaMenu));
+
+        // Artisan Pizza
+        FoodInfo[] artisanPizzaMenu = {ARTISAN_PIZZA_AP,ARTISAN_PIZZA_BBQTP,ARTISAN_PIZZA_KP,ARTISAN_PIZZA_MANP,ARTISAN_PIZZA_MARP,ARTISAN_PIZZA_SP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo artisanPizza = new RestaurantInfo("Artisan Pizza", createMenu(artisanPizzaMenu));
+
+        // İtaliano Pizza
+        FoodInfo[] italianoPizzaMenu = {ITALIANO_PIZZA_BBQTP,ITALIANO_PIZZA_KP,ITALIANO_PIZZA_MARP,ITALIANO_PIZZA_SP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo italianoPizza = new RestaurantInfo("İtaliano Pizza", createMenu(italianoPizzaMenu));
+
+        // İyidir Pizza
+        FoodInfo[] iyidirPizzaMenu = {IYIDIR_PIZZA_BBQTP,IYIDIR_PIZZA_KP,IYIDIR_PIZZA_MARP,IYIDIR_PIZZA_SP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo iyidirPizza = new RestaurantInfo("İyidir Pizza", createMenu(iyidirPizzaMenu));
+
+        // Dilim Pizza
+        FoodInfo[] dilimPizzaMenu = {DILIM_PIZZA_BBQTP,DILIM_PIZZA_KP,DILIM_PIZZA_MANP,DILIM_PIZZA_MARP,DILIM_PIZZA_SP,NECO_COLA,NECO_COLA_L,NECO_COLA_Z,NECO_FANTA,NECO_SPRITE,NECO_SODA};
+        RestaurantInfo dilimPizza = new RestaurantInfo("Dilim Pizza", createMenu(dilimPizzaMenu));
 
         // Create Linked List
         LinkedListNode<RestaurantInfo> restaurants = LinkedListNode.CreateList(necoLahmacun);
@@ -315,27 +426,65 @@ public class Database {
         nextRestaurant = nextRestaurant.addNextNode(doydoyPide);
         nextRestaurant = nextRestaurant.addNextNode(pidemmPide);
         nextRestaurant = nextRestaurant.addNextNode(bisesPide);
+        nextRestaurant = nextRestaurant.addNextNode(kocaPide);
+        nextRestaurant = nextRestaurant.addNextNode(blackBurger);
+        nextRestaurant = nextRestaurant.addNextNode(bullBurger);
+        nextRestaurant = nextRestaurant.addNextNode(gurmeBurger);
+        nextRestaurant = nextRestaurant.addNextNode(yesimBurger);
+        nextRestaurant = nextRestaurant.addNextNode(guzelBurger);
+        nextRestaurant = nextRestaurant.addNextNode(hatayDoner);
+        nextRestaurant = nextRestaurant.addNextNode(canımDoner);
+        nextRestaurant = nextRestaurant.addNextNode(harbiDoner);
+        nextRestaurant = nextRestaurant.addNextNode(lezizDoner);
+        nextRestaurant = nextRestaurant.addNextNode(yanarDoner);
+        nextRestaurant = nextRestaurant.addNextNode(lezzetCigkofte);
+        nextRestaurant = nextRestaurant.addNextNode(adiyamanCigkofte);
+        nextRestaurant = nextRestaurant.addNextNode(sesoCigkofte);
+        nextRestaurant = nextRestaurant.addNextNode(cokcokCigkofte);
+        nextRestaurant = nextRestaurant.addNextNode(adkoCigkofte);
+        nextRestaurant = nextRestaurant.addNextNode(gurmemPizza);
+        nextRestaurant = nextRestaurant.addNextNode(artisanPizza);
+        nextRestaurant = nextRestaurant.addNextNode(italianoPizza);
+        nextRestaurant = nextRestaurant.addNextNode(iyidirPizza);
+        nextRestaurant = nextRestaurant.addNextNode(dilimPizza);
 
         // data
         RESTAURANTS_ROOT = restaurants;
     }
 
+    private static LinkedListNode<FoodInfo> createMenu(FoodInfo[] foodGroup){
+        LinkedListNode<FoodInfo> root = null;
+        LinkedListNode<FoodInfo> tail = null;
+
+        if(foodGroup.length>0){
+            root = LinkedListNode.CreateList(foodGroup[0]);
+            tail = root;
+
+            for(int i = 1;i<foodGroup.length;i++){
+                tail = tail.addNextNode(foodGroup[i]);
+            }
+        }
+        return root;
+    }
+
     public static LinkedListNode<RestaurantInfo> FilterRestaurantsByCategory(LinkedListNode<RestaurantInfo> node, String categoryName){
         if(node == null) throw new NullPointerException("RestaurantInfo node is null!");
 
-        LinkedListNode<RestaurantInfo> filtered = null;
+        LinkedListNode<RestaurantInfo> root = null;
+        LinkedListNode<RestaurantInfo> tail = null;
         LinkedListNode<RestaurantInfo> currentRest = node;
         while (true){
 
             LinkedListNode<FoodInfo> currentFood = currentRest.getData().getMenu();
             while (true){
                 if(currentFood.getData().hasCategory(categoryName)){
-                    if(filtered == null){
-                        filtered = LinkedListNode.CreateList(currentRest.getData());
+                    if(root == null){
+                        root = LinkedListNode.CreateList(currentRest.getData());
+                        tail = root;
                         break;
                     }
                     else {
-                        filtered.addNextNode(currentRest.getData());
+                        tail = tail.addNextNode(currentRest.getData());
                         break;
                     }
                 }
@@ -349,7 +498,7 @@ public class Database {
             }
 
             if(currentRest.isTail()){
-                return filtered;
+                return root;
             }
             else{
                 currentRest = currentRest.getNext();

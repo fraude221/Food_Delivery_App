@@ -3,18 +3,24 @@ package com.sen2212.fooddeliveryapp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.StateListDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sen2212.fooddeliveryapp.datastructures.BasketList;
 import com.sen2212.fooddeliveryapp.datastructures.Database;
 import com.sen2212.fooddeliveryapp.datastructures.FoodCategory;
+import com.sen2212.fooddeliveryapp.datastructures.FoodInfo;
 import com.sen2212.fooddeliveryapp.datastructures.LinkedListNode;
 import com.sen2212.fooddeliveryapp.datastructures.RestaurantInfo;
 import com.sen2212.fooddeliveryapp.datastructures.TreeNode;
@@ -67,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
 
                     typeLayout.removeAllViews();
                     foodLayout.removeAllViews();
+
+                    rootRestaurant = Database.RESTAURANTS_ROOT;
+                    AddRestaurants(null);
                 }
             }
         });
@@ -88,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         AddFoodCategories();
         addLeafNodes(Database.NCAT_ROOT);
-        AddRestaurants();
+        AddRestaurants(null);
     }
 
     private void AddFoodCategories(){
@@ -141,14 +150,89 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void AddRestaurants(){
+    private void addLeafNodes(TreeNode<FoodCategory> root)
+    {
+        // If node is null, return
+        if (root == null)
+            return;
+
+        // If node is leaf node, print its data
+        if (root.getChildCount()==0)
+        {
+            addFoodBlock(root,root.getData().getName(),root.getParent().getData().getName(),root.getData().getImage(),root.getData().getColor());
+            return;
+        }
+
+        // If left child exists, check for leaf
+        // recursively
+        if (root.getChildCount()>0){
+            for (int i = 0;i<root.getChildCount();i++){
+                addLeafNodes(root.getChildNode(i));
+            }
+        }
+    }
+
+    private void addFoodBlock(final TreeNode<FoodCategory> newRoot, String foodName, String foodParentName,int image,int color){
+        final LinearLayout foodBlock = new LinearLayout(MainActivity.this);
+        foodBlock.setBackgroundColor(color);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
+        layoutParams.setMargins(24, 24, 0, 24);
+        foodBlock.setLayoutParams(layoutParams);
+        foodBlock.setOrientation(LinearLayout.VERTICAL);
+        foodBlock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rootRestaurant = Database.FilterRestaurantsByCategory(Database.RESTAURANTS_ROOT, newRoot.getData().getName());
+                AddRestaurants(newRoot.getData());
+            }
+        });
+
+        LinearLayout foodBlock1 = new LinearLayout(MainActivity.this);
+        foodBlock1.setLayoutParams(new LinearLayout.LayoutParams(300, 50,2));
+        LinearLayout foodBlock2 = new LinearLayout(MainActivity.this);
+        foodBlock2.setLayoutParams(new LinearLayout.LayoutParams(300, 200,1));
+        LinearLayout foodBlock3 = new LinearLayout(MainActivity.this);
+        foodBlock3.setLayoutParams(new LinearLayout.LayoutParams(300, 50,2));
+
+        TextView text = new TextView(MainActivity.this);
+        text.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        text.setGravity(Gravity.CENTER);
+        if(foodParentName!=null)
+            text.setText(foodParentName);
+        text.setTextSize(9);
+        foodBlock1.addView(text);
+
+        ImageView img = new ImageView(MainActivity.this);
+        img.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        img.setImageResource(image);
+        foodBlock2.addView(img);
+
+        TextView text2 = new TextView(MainActivity.this);
+        text2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        text2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        text2.setGravity(Gravity.CENTER);
+        text2.setText(foodName);
+        text2.setTextSize(9);
+        foodBlock3.addView(text2);
+
+        foodBlock.addView(foodBlock1);
+        foodBlock.addView(foodBlock2);
+        foodBlock.addView(foodBlock3);
+        foodLayout.addView(foodBlock);
+        foodLayout.setPadding(0,0,24,0);
+    }
+
+    private void AddRestaurants(FoodCategory category){
+        restaurantLayout.removeAllViews();
+
         LinkedListNode<RestaurantInfo> currentNode;
         currentNode = rootRestaurant;
         while(currentNode != null){
             LinearLayout restaurantBlock = new LinearLayout(MainActivity.this);
             restaurantBlock.setBackgroundColor(Color.WHITE);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 400);
-            layoutParams.setMargins(0, 24, 0, 24);
+            layoutParams.setMargins(0, 48, 0, 0);
             restaurantBlock.setLayoutParams(layoutParams);
             restaurantBlock.setPadding(24,0,0,0);
             restaurantBlock.setOrientation(LinearLayout.HORIZONTAL);
@@ -196,82 +280,58 @@ public class MainActivity extends AppCompatActivity {
 
             restaurantLayout.addView(restaurantBlock);
 
+            if(category != null){
+                LinkedListNode<FoodInfo> foodNode;
+                foodNode = currentNode.getData().getMenu();
+                while(foodNode!=null){
+                    if(category == foodNode.getData().getFoodCategory().getData()){
+                        LinearLayout newLine = new LinearLayout(this);
+                        newLine.setBackgroundColor(Color.BLACK);
+                        newLine.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 5));
+                        restaurantLayout.addView(newLine);
+                        restaurantLayout.addView(createFoodBlock(foodNode.getData().getName(), foodNode.getData().getPriceString()));
+                    }
+                    foodNode = foodNode.getNext();
+                }
+            }
+
             currentNode = currentNode.getNext();
         }
     }
 
-    private void addLeafNodes(TreeNode<FoodCategory> root)
-    {
-        // If node is null, return
-        if (root == null)
-            return;
-
-        // If node is leaf node, print its data
-        if (root.getChildCount()==0)
-        {
-            addFoodBlock(root,root.getData().getName(),root.getParent().getData().getName(),root.getData().getImage(),root.getData().getColor());
-            return;
-        }
-
-        // If left child exists, check for leaf
-        // recursively
-        if (root.getChildCount()>0){
-            for (int i = 0;i<root.getChildCount();i++){
-                addLeafNodes(root.getChildNode(i));
-            }
-        }
-    }
-
-    private void addFoodBlock(final TreeNode<FoodCategory> newRoot, String foodName, String foodParentName,int image,int color){
-        final LinearLayout foodBlock = new LinearLayout(MainActivity.this);
-        foodBlock.setBackgroundColor(color);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
-        layoutParams.setMargins(24, 24, 0, 24);
+    private View createFoodBlock(String name, String price){
+        LinearLayout foodBlock = new LinearLayout(this);
+        foodBlock.setBackgroundColor(Color.WHITE);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         foodBlock.setLayoutParams(layoutParams);
-        foodBlock.setOrientation(LinearLayout.VERTICAL);
-        foodBlock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                restaurantLayout.removeAllViews();
-                rootRestaurant = Database.FilterRestaurantsByCategory(Database.RESTAURANTS_ROOT, newRoot.getData().getName());
-                AddRestaurants();
-            }
-        });
+        foodBlock.setOrientation(LinearLayout.HORIZONTAL);
 
-        LinearLayout foodBlock1 = new LinearLayout(MainActivity.this);
-        foodBlock1.setLayoutParams(new LinearLayout.LayoutParams(300, 50,2));
-        LinearLayout foodBlock2 = new LinearLayout(MainActivity.this);
-        foodBlock2.setLayoutParams(new LinearLayout.LayoutParams(300, 200,1));
-        LinearLayout foodBlock3 = new LinearLayout(MainActivity.this);
-        foodBlock3.setLayoutParams(new LinearLayout.LayoutParams(300, 50,2));
+        LinearLayout foods1 = new LinearLayout(this);
+        foods1.setOrientation(LinearLayout.VERTICAL);
+        foods1.setPadding(24,24,0,24);
+        foods1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT,1));
 
-        TextView text = new TextView(MainActivity.this);
-        text.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        text.setGravity(Gravity.CENTER);
-        if(foodParentName!=null)
-            text.setText(foodParentName);
-        text.setTextSize(9);
-        foodBlock1.addView(text);
+        LinearLayout foods2 = new LinearLayout(this);
+        foods2.setGravity(Gravity.CENTER);
+        foods2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT,4));
 
-        ImageView img = new ImageView(MainActivity.this);
-        img.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        img.setImageResource(image);
-        foodBlock2.addView(img);
+        TextView foodNameText = new TextView(this);
+        foodNameText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        foodNameText.setText(name);
+        foodNameText.setTextSize(12);
+        foods1.addView(foodNameText);
 
-        TextView text2 = new TextView(MainActivity.this);
-        text2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        text2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        text2.setGravity(Gravity.CENTER);
-        text2.setText(foodName);
-        text2.setTextSize(9);
-        foodBlock3.addView(text2);
+        TextView foodPrice = new TextView(this);
+        foodPrice.setTextColor(Color.parseColor("#4CAF50"));
+        foodPrice.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        foodPrice.setText("\n"+price);
+        foodPrice.setTextSize(9);
+        foodPrice.setTypeface(null, Typeface.BOLD);
+        foods1.addView(foodPrice);
 
-        foodBlock.addView(foodBlock1);
-        foodBlock.addView(foodBlock2);
-        foodBlock.addView(foodBlock3);
-        foodLayout.addView(foodBlock);
-        foodLayout.setPadding(0,0,24,0);
+        foodBlock.addView(foods1);
+        foodBlock.addView(foods2);
+        return  foodBlock;
     }
 
     @Override
